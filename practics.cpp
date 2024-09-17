@@ -2,35 +2,28 @@
 using namespace std;
 class student{
 public:
-   string name;
-   int rol;
-   float per;
+  string name;
+  int roll;
+  int marks;
 };
-int main(){
-    int n;
-    cout<<"enter n : ";
-    cin>>n;
-    cin.ignore();
-   vector<student> ans;
-   for(int i=0;i<n;i++){
-    student st;
-    cout<<i+1<<" th student : \n\n";
-      cout<<"\tEnter Name : ";
-       getline(cin,st.name);
-       cout<<"\tEnter roll : ";
-       cin>>st.rol;
+int main(){ 
+       vector<student> nums;
+       int n;
+       cout<<"Number of student : ";
+       cin>>n;
        cin.ignore();
-       cout<<"\tEnter Percentage : ";
-       cin>>st.per;
-       cin.ignore();
-       ans.push_back(st);
+       for(int i=1;i<=n;i++){
+          student st;
+         cout<<i<<"t Student Details : ";
+         cout<<"Enter Student Name : ";
+          getline(cin,st.name);
+          cout<<"Enter Roll : ";
+          cin>>st.roll;
+          cin.ignore();
+          cout<<"Enter Marks  : ";
+          cin>>st.marks;
+          cin.ignore();
+          nums.push_back(st);
        }
-       //output
-       for(int i=0;i<n;i++){
-        cout<<i+1<<" th student\n\n"<<endl;
-        cout<<"NAME : "<<ans[i].name<<endl;
-        cout<<"ROLL : "<<ans[i].rol<<endl;
-        cout<<"PERCENTAGE : "<<ans[i].per<<endl;
-       }
-    return 0;
+   return 0;
 }
